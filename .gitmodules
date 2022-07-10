@@ -1,0 +1,6 @@
+[submodule "Itoa"]
+	path = Itoa
+	url = https://github.com/nmke-de/Itoa
+[submodule "Lex"]
+	path = Lex
+	url = https://github.com/nmke-de/Lex
