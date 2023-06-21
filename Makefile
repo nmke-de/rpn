@@ -1,3 +1,4 @@
+LIBC = /usr/lib/libc.a
 LDFLAGS += -static -s -z norelro -z noseparate-code
 GIT_UPDATE = git submodule update --init
 
@@ -8,7 +9,7 @@ rpn: rpn.c Itoa/itoa.h Lex/lex.h Stack/stack.h
 	make -C Itoa -f Makefile
 	make -C Lex  -f Makefile
 	$(CC) -c -o Stack/stack.o Stack/stack.c
-	$(LD) $(LDFLAGS) -o rpn rpn.o Itoa/itoa.o Lex/lex.o Stack/stack.o /usr/lib/libc.a
+	$(LD) $(LDFLAGS) -o rpn rpn.o Itoa/itoa.o Lex/lex.o Stack/stack.o $(LIBC)
 
 Itoa/itoa.h:
 	$(GIT_UPDATE)
