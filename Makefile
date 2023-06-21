@@ -1,4 +1,4 @@
-LIBC = /usr/lib/libc.a
+LIBC ?= /usr/lib/libc.a
 LDFLAGS += -static -s -z norelro -z noseparate-code
 GIT_UPDATE = git submodule update --init
 
