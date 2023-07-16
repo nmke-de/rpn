@@ -3,11 +3,15 @@
 #include "Lex/lex.h"
 #include <stdio.h>
 
+char readc(void *dummy) {
+	return fgetc(stdin);
+}
+
 int main() {
 	word_t current;
 	stack_t *stk = stack(0);
 	int a;
-	while (nextword(&current)) {
+	while (nextword(&current, readc, NULL)) {
 		if (current.type == num)
 			stk = push(stk, current.core.n);
 		else {
